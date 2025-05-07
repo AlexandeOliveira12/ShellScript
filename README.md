@@ -43,7 +43,7 @@ Via terminal:
 
 ### 3. Dê permissão de execução
 ```bash
-chmod +x pos_formatacao.sh
+chmod +x generalscript.sh
 ```
 
 ---
@@ -58,7 +58,7 @@ O script solicitará sua senha de `sudo` para instalar os pacotes.
 ---
 
 ## ✅ Dica
-Se quiser rodar o script sempre que formatar seu PC, salve-o em um pendrive ou em um repositório GitHub privado.
+Se quiser rodar o script sempre que formatar seu PC, salve-o em um pendrive.
 
 ---
 
