@@ -15,18 +15,21 @@ sudo apt-get install -y software-properties-common build-essential lsb-core dkms
 echo "Instalando drivers Vulkan..."
 sudo apt-get install -y mesa-vulkan-drivers vulkan-tools libassimp5 libvulkan1
 
-# Baixando e instalando os drivers AMD para RX580
-echo "Baixando e instalando os drivers da placa de vídeo AMD RX580..."
-wget https://drivers.amd.com/drivers/linux/amdgpu-pro-22.40-1234567-ubuntu-20.04.tar.xz -O /tmp/amdgpu-pro.tar.xz
+# Baixando o pacote .deb com os drivers AMD RX580
+echo "Baixando pacote .deb para instalação dos drivers..."
+wget https://repo.radeon.com/amdgpu-install/6.3.4/ubuntu/noble/amdgpu-install_6.3.60304-1_all.deb -O /tmp/amdgpu-install.deb
 
-# Descompactando o arquivo de drivers
-echo "Descompactando drivers..."
-tar -xf /tmp/amdgpu-pro.tar.xz -C /tmp
+# Instalando o pacote .deb
+echo "Instalando drivers AMD RX580..."
+sudo dpkg -i /tmp/amdgpu-install.deb
 
-# Instalando os drivers
-echo "Instalando drivers..."
-cd /tmp/amdgpu-pro-22.40-1234567-ubuntu-20.04
-sudo ./amdgpu-pro-install --usecase=graphics,opencl --opencl=rocr,legacy --vulkan=amdvlk,pro
+# Corrigindo dependências, se necessário
+echo "Corrigindo dependências..."
+sudo apt-get install -f -y
+
+# Instalando os drivers usando o amdgpu-pro
+echo "Instalando drivers AMD com amdgpu-pro..."
+sudo amdgpu-install --usecase=graphics,opencl --opencl=rocr,legacy --vulkan=amdvlk,pro
 
 # Verificando a instalação
 echo "Verificando a instalação dos drivers..."
