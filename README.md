@@ -15,7 +15,7 @@
 ## 📦 O que o script instala?
 
 - **Atualizações do sistema**
-- **Pacotes essenciais**: `wget`, `git`, `pip`, `tkinter`, entre outros
+- **Pacotes essenciais**: `wget`, `git`, `pip`, entre outros
 - **Visual Studio Code**
 - **Google Chrome**
 - **Mais de 40 bibliotecas Python via `pip3`**, incluindo:
@@ -26,25 +26,31 @@
 ## 🚀 Como executar
 
 ### 1. Baixe o script
-[⬇ Clique aqui para baixar o script `pos_formatacao.sh`](sandbox:/mnt/data/pos_formatacao.sh)
 
-Ou via terminal:
+Via terminal:
 ```bash
-wget https://chat.openai.com/sandbox/pos_formatacao.sh
+  git clone https://github.com/AlexandeOliveira12/ShellScript.git
 ```
 
 ---
 
-### 2. Dê permissão de execução
+### 2. Entre no repositório
+```bash
+  cd ShellScript
+```
+
+---
+
+### 3. Dê permissão de execução
 ```bash
 chmod +x pos_formatacao.sh
 ```
 
 ---
 
-### 3. Execute o script
+### 4. Execute o script
 ```bash
-./pos_formatacao.sh
+./generalscript.sh
 ```
 
 O script solicitará sua senha de `sudo` para instalar os pacotes.
